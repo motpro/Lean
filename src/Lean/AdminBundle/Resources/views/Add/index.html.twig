@@ -20,12 +20,12 @@
 </div>
 
 <div class="col-md-9">
-Fill the blank
+
 <div class="panel panel-default">
   	<div class="panel-body">
 		
 		{% if type is defined  %}
-
+		<div class="col-md-6" ng-controller="add_user">
 			{{ form_start(form , { 'action' : '' , 'method' : 'post' , 'class' : 'form-horizontal'}) }}
 
 			    <div class="form-group">
@@ -34,7 +34,7 @@ Fill the blank
 				</div>
 
 				<div class="form-group">
-				    <label for="">{{ form_label(form.username) }}</labe>
+				    <label for="">{{ form_label(form.username) }}</label>
 				    {{ form_widget( form.username, { 'attr' : { 'class' : 'form-control' , 'id' : 'username' , 'placeholder' : '输入用户名' } } ) }}
 				</div>
 
@@ -49,6 +49,14 @@ Fill the blank
 				</div>
 
 			{{ form_end(form) }}
+		</div>
+
+		<div class="col-md-6">
+
+
+
+		</div>
+
 		{% endif %}
 
 	</div>
@@ -57,3 +65,14 @@ Fill the blank
 
 </div></div>
 {% endblock %}
+
+
+{% block javascript %}
+	
+	<script src="{{ asset( 'bundles/angular_mvc/controllers/AdminBundle/Add/index.js') }}"></script>
+	
+{% endblock %}
+
+
+
+

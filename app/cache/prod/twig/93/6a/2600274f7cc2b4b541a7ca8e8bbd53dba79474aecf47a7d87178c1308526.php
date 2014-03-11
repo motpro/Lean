@@ -12,6 +12,7 @@ class __TwigTemplate_936a2600274f7cc2b4b541a7ca8e8bbd53dba79474aecf47a7d87178c13
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
+            'javascript' => array($this, 'block_javascript'),
         );
     }
 
@@ -68,73 +69,95 @@ Fill the blank
 <div class=\"panel panel-default\">
   \t<div class=\"panel-body\">
 \t\t
+
 \t\t";
-        // line 27
+        // line 28
         if (array_key_exists("type", $context)) {
-            // line 28
-            echo "
-\t\t\t";
             // line 29
+            echo "\t\t<div class=\"col-md-6\">
+\t\t\t";
+            // line 30
             echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start', array("action" => "", "method" => "post", "class" => "form-horizontal"));
             echo "
 
 \t\t\t    <div class=\"form-group\">
 \t\t\t    \t<label for=\"\">";
-            // line 32
+            // line 33
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name"), 'label');
             echo "</label>
 \t\t\t\t    ";
-            // line 33
+            // line 34
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name"), 'widget', array("attr" => array("class" => "form-control", "id" => "username", "placeholder" => "输入名字")));
             echo "
 \t\t\t\t</div>
 
 \t\t\t\t<div class=\"form-group\">
 \t\t\t\t    <label for=\"\">";
-            // line 37
-            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username"), 'label');
-            echo "</labe>
-\t\t\t\t    ";
             // line 38
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username"), 'label');
+            echo "</label>
+\t\t\t\t    ";
+            // line 39
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username"), 'widget', array("attr" => array("class" => "form-control", "id" => "username", "placeholder" => "输入用户名")));
             echo "
 \t\t\t\t</div>
 
 \t\t\t\t<div class=\"form-group\">
 \t\t\t\t    <label for=\"\">";
-            // line 42
+            // line 43
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email"), 'label');
             echo "</label>
 \t\t\t\t    ";
-            // line 43
+            // line 44
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email"), 'widget', array("attr" => array("class" => "form-control", "id" => "username", "placeholder" => "输入邮箱")));
             echo "
 \t\t\t\t</div>
 
 \t\t\t\t<div class=\"form-group\">
 \t\t\t\t    <label for=\"\">";
-            // line 47
+            // line 48
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "password"), 'label');
             echo "</label>
 \t\t\t\t    ";
-            // line 48
+            // line 49
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "password"), 'widget', array("attr" => array("class" => "form-control", "id" => "username", "placeholder" => "输入密码")));
             echo "
 \t\t\t\t</div>
 
 \t\t\t";
-            // line 51
+            // line 52
             echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
             echo "
+\t\t</div>
+
+\t\t<div class=\"col-md-6\">
+
+
+
+\t\t</div>
+
 \t\t";
         }
-        // line 53
+        // line 62
         echo "
 \t</div>
 </div>
 </div>
 
 </div></div>
+";
+    }
+
+    // line 71
+    public function block_javascript($context, array $blocks = array())
+    {
+        // line 72
+        echo "\t
+\t<script src=\"";
+        // line 73
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/angular_mvc/controllers/AdminBundle/Add/index.js"), "html", null, true);
+        echo "\"></script>
+\t
 ";
     }
 
@@ -150,6 +173,6 @@ Fill the blank
 
     public function getDebugInfo()
     {
-        return array (  132 => 53,  127 => 51,  121 => 48,  117 => 47,  110 => 43,  106 => 42,  99 => 38,  95 => 37,  88 => 33,  84 => 32,  78 => 29,  75 => 28,  73 => 27,  60 => 17,  56 => 16,  52 => 15,  48 => 14,  38 => 6,  35 => 5,  29 => 3,);
+        return array (  158 => 73,  155 => 72,  152 => 71,  142 => 62,  129 => 52,  123 => 49,  119 => 48,  112 => 44,  108 => 43,  101 => 39,  97 => 38,  90 => 34,  86 => 33,  80 => 30,  77 => 29,  75 => 28,  61 => 17,  57 => 16,  53 => 15,  49 => 14,  39 => 6,  36 => 5,  30 => 3,);
     }
 }
