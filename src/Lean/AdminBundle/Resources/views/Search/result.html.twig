@@ -1,0 +1,9 @@
+{% extends "::template.html.twig" %}
+
+{% block body %}
+	
+	{% if result is defined %}
+		{{ dump(result) }}
+	{% endif %}
+
+{% endblock %}

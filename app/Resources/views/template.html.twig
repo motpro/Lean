@@ -1,0 +1,74 @@
+{% extends "::layout.html.twig" %}
+
+{% block head %}
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/bootstrap3/dist/css/bootstrap.css') }}" />
+    <!-- Chang URLs to wherever Video.js files will be hosted -->
+    <link href="{{ asset('bundles/leanyun/video-js/video-js.min.css') }}" rel="stylesheet" type="text/css">
+    <!-- video.js must be in the <head> for older IEs to work. -->
+    <script src="{{ asset('bundles/leanyun/video-js/video-js.css') }}"></script>
+
+    <!-- kindeditor start. -->
+    <link rel="stylesheet" href="{{ asset( 'bundles/kindeditor/themes/default/default.css' ) }}" />
+    <script charset="utf-8" src="{{ asset( 'bundles/kindeditor/kindeditor-min.js') }}"></script>
+    <script charset="utf-8" src="{{ asset( 'bundles/kindeditor/lang/zh_CN.js') }}"></script>
+    <!-- kindeditor end-->
+
+    <!-- datetimepicker start-->
+    <link rel="stylesheet" href="{{ asset( 'bundles/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' ) }}" />
+    <script charset="utf-8" src="{{ asset( 'bundles/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <!-- datetimepicker end-->
+
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">导航条</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">首页</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">管理员 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">企业列表</a></li>
+                        <li><a href="#">联系人列表</a></li>
+                        <li><a href="#">网站会员</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">废纸篓</a></li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">销售 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('corporation_home' , { page : 1 }) }}">企业列表</a></li>
+                        <li><a href="{{ path('contact_home' , { page : 1 }) }}">客户列表</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">提醒列表</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">销售机会</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">工具<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('search_home') }}">搜索</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+{% endblock %}

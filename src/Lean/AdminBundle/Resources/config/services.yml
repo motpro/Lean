@@ -1,0 +1,11 @@
+parameters:
+#    lean_admin.example.class: Lean\AdminBundle\Example
+    model.contact.class: Lean\Service\Contact\ContactService
+
+services:
+#    lean_admin.example:
+#        class: %lean_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    model.contact:
+        class: %model.contact.class%
+        arguments: ["@Doctrine"]

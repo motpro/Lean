@@ -1,0 +1,30 @@
+index:
+    pattern: /
+    defaults: { _controller: LeanAdminBundle:Welcome:index }
+
+contact_home:
+    pattern:  /contacts/{page}
+    defaults: { _controller: LeanAdminBundle:Default:index }
+    requirements:
+        page: "[0-9]+"
+        
+contact_query:
+    pattern: /query/{id}
+    defaults: { _controller: LeanAdminBundle:Default:query }
+    requirements:
+        id: "[0-9]+"
+
+corporation_home:
+    pattern: /corporation/{page}
+    defaults: { _controller:LeanAdminBundle:Corporation:index }
+    requirements:
+        page: "[0-9]+"
+        
+search_home:
+    pattern: /search
+    defaults: { _controller: LeanAdminBundle:Search:index }
+search_result_return:
+    pattern: /search_result
+    defaults: { _controller: LeanAdminBundle:Search:Result }
+    requirements:
+        method: POST

@@ -1,0 +1,8 @@
+lean_rest:
+    resource: "@LeanRestBundle/Resources/config/routing.yml"
+    prefix:   /
+
+lean_admin:
+    resource: "@LeanAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+

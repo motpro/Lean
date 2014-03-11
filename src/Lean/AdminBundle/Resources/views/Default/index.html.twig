@@ -1,0 +1,28 @@
+{% extends "::template.html.twig" %}
+
+{% block title %}
+    客户列表
+{% endblock %}
+
+{% block body %}
+
+<table class="table table-bordered table-condensed table-hover">
+
+    {% for user in users %}
+
+    <tr {% if user.username %}class="active"{% endif %}>
+        <td>{{user.id}}</td>
+        <td><a href="{{ path('contact_query' , { 'id' : user.id }) }}">{{user.username}}</a></td>
+        <td>
+            {% if user.username %}{{user.name}}
+            {% else %}<a href="{{ path('contact_query' , { 'id' : user.id }) }}">{{user.name}}</a>
+            {% endif %}
+        </td>
+        <td>{{user.email}}</td>
+        <td>{{user.job}}</td>
+        <td>{{user.mobile}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

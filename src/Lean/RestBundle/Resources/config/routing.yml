@@ -1,0 +1,6 @@
+rest_contact:
+    pattern: /rest/contact/{id}.{_format}
+    defaults: { _controller: LeanRestBundle:User:contact }
+    requirements:
+        id: "[0-9]+"
+        _format: html|json|xml
