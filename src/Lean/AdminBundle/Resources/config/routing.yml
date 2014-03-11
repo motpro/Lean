@@ -28,3 +28,13 @@ search_result_return:
     defaults: { _controller: LeanAdminBundle:Search:Result }
     requirements:
         method: POST
+
+add_home:
+    pattern: /add
+    defaults: { _controller: LeanAdminBundle:Add:index }
+
+add_data:
+    pattern: /add/{type}
+    defaults: { _controller: LeanAdminBundle:Add:index }
+    requirements:
+        type: user|contact|company|opportunity

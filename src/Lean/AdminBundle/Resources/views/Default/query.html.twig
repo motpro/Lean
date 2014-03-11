@@ -28,16 +28,26 @@ KindEditor.ready(function(K) {
         </div>
         <div class="panel-body">
         <table class="table table-condensed">
+        <tr>
+            <td class="col-md-4"><span class="label label-default">编号</span></td>
+            <td class="col-md-8"><span class="label label-default">&nbsp;&nbsp;提醒时间 &nbsp;</span> 
+            | <span class="label label-default">&nbsp;添加时间 &nbsp;</label></td>
+        </tr>
         {% for one in list if one.recordText %}
             <tr>
-                <td></td>
-                <td class="col-md-3">{% if one.remindeddate %}{{one.remindeddate|date('Y-m-d h:i')}}{% endif %} | 
+                <td>{{one.id}}</td>
+                <td>
+                    {% if one.remindeddate %}
+                    <span class="label label-info">{{one.remindeddate|date('Y-m-d h:i')}}</span>
+                    {% else %}
+                    <span class="label label-info">没有提醒时间</span>
+                    {% endif %} |
                 {{one.date|date('Y-m-d h:i')}}
                 </td>
             </tr>
             <tr>
-                <td class="col-md-2">{{one.id}}</td>
-                <td class="col-md-10">{{one.recordText}}</td>
+                <td></td>
+                <td>{{one.recordText}}</td>
             </tr>
         {% endfor %}
         </table>
@@ -57,7 +67,7 @@ KindEditor.ready(function(K) {
             
             <div class="form-group">
                 <label>时间</label>
-                <input class="form-control" type="text" value="2012-05-15 21:05" id="datetimepicker">
+                <input class="form-control" type="text" value="" id="datetimepicker">
             </div>
             <div class="form-group">
                 <input class="btn btn-primary" type="button" value="更新" />
@@ -72,39 +82,70 @@ KindEditor.ready(function(K) {
 <div class="row">
     <div class="col-md-6">
 
-        {% if account.uid %}
+        {% if account.id is defined %}
 
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">{{account.username}}的会员资料</h3>
+                <h3 class="panel-title">{{contact.name}}的会员资料</h3>
             </div>
         <div class="panel-body">
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="row"><div class="col-md-6">网站账号</div> <div class="col-md-6">{{account.username}}</div></div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row"><div class="col-md-6">邮箱</div> <div class="col-md-6">{{account.email}}</div></div>
-                </li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
+            <table class="table table-condensed table-bordered">
+                <tr>
+                    <td class="col-md-4">字段</td>
+                    <td class="col-md-8">值</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{account.email}}</td>
+                </tr>
+                <tr>
+                    <td>登录账户</td>
+                    <td>{{account.username}}</td>
+                </tr>
+                <tr>
+                    <td>真实姓名</td>
+                    <td>{% if webprofile.name is defined %}{{webprofile.name}}{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>联系方式</td>
+                    <td>{% if webprofile.phone is defined %}{{webprofile.phone}}{% endif %}</td>
+                </tr>   
+                <tr>
+                    <td>公司</td>
+                    <td>{% if webprofile.company is defined %}{{webprofile.company}}{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>工作</td>
+                    <td>{% if webprofile.job is defined %}{{webprofile.job}}{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>城市</td>
+                    <td>{% if webprofile.city is defined %}{{webprofile.city}}{% endif %}</td>
+                </tr>                
+            </table>
         </div>
 
         {% else %}
 
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">他/她不是网站会员</h3>
                 </div>
+                <div class="panel-body">
+
+                    <p></p>
+
+                </div>
+
             </div>
         
         {% endif %}
     </div>
 
     <div class="col-md-6">
+
+    
+
     </div>
 </div>
 

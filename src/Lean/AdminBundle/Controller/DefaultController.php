@@ -21,11 +21,26 @@ class DefaultController extends Controller
 
         $list = $this->getDoctrine()->getRepository('LeanAdminBundle:Communication')->findByContactId( $id);
 
-        $account = $this->getDoctrine()->getRepository('LeanAdminBundle:Ucmember')->find( $result->getUserId() );
+        if( $result->getUserId() > 0)
+        {
+            $account = $this->getDoctrine()->getRepository('LeanAdminBundle:User')->find( $result->getUserId() );
+
+            $webprofile = $this->getDoctrine()->getRepository('LeanAdminBundle:Profile')->find( $result->getUserId() );        
+        }else
+        {
+            $account = array();
+            $webprofile = array();
+        }
 
         return $this->render('LeanAdminBundle:Default:query.html.twig' , array('contact'    =>$result , 
                                                                                'list'       =>$list ,
                                                                                'account'    =>$account ,
+                                                                               'webprofile' =>$webprofile ,
         ));
+    }
+
+    public function communicationAction()
+    {
+        $list = $this->getDoctrine()->getRepository('LeanAdminBundle:Communication')->findByMasterId( 1);
     }
 }
