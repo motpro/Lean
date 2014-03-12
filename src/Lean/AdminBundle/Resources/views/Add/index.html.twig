@@ -25,7 +25,10 @@
   	<div class="panel-body">
 		
 		{% if type is defined  %}
-		<div class="col-md-6" ng-controller="add_user">
+		<div class="col-md-6">
+
+			<input type="hidden" name="add_user_" value="{{ path('rest_') }}" ng-model="add_user_" />
+
 			{{ form_start(form , { 'action' : '' , 'method' : 'post' , 'class' : 'form-horizontal'}) }}
 
 			    <div class="form-group">
@@ -33,9 +36,9 @@
 				    {{ form_widget(form.name, { 'attr' : { 'class' : 'form-control' , 'id' : 'username' , 'placeholder' : '输入名字' } }) }}
 				</div>
 
-				<div class="form-group">
+				<div class="form-group" ng-controller="add_user">
 				    <label for="">{{ form_label(form.username) }}</label>
-				    {{ form_widget( form.username, { 'attr' : { 'class' : 'form-control' , 'id' : 'username' , 'placeholder' : '输入用户名' } } ) }}
+				    {{ form_widget( form.username, { 'attr' : { 'class' : 'form-control' , 'id' : 'username' , 'placeholder' : '输入用户名' , 'ng-keyup' : 'username_exist(e)' , 'ng-model' : 'username' } } ) }}
 				</div>
 
 				<div class="form-group">
