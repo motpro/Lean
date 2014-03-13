@@ -11,10 +11,21 @@
 <h1>选择添加类型</h1>
 
 <ul class="nav nav-pills nav-stacked">
-	<li><a href="{{path('add_data' , {'type':'contact'})}}">添加客户</a></li>
-	<li><a href="{{path('add_data' , {'type':'user'})}}">添加会员</a></li>
-	<li><a href="{{path('add_data' , {'type':'company'})}}">添加企业</a></li>
-	<li><a href="{{path('add_data' , {'type':'opportunity'})}}">添加销售机会</a></li>
+	<li {% if type is defined and type == 'contact'  %}class="active"{% endif %}>
+		<a href="{{path('add_data' , {'type':'contact'})}}">添加客户</a>
+	</li>
+	
+	<li {% if type is defined and type == 'user'  %}class="active"{% endif %}>
+		<a href="{{path('add_data' , {'type':'user'})}}">添加会员</a>
+	</li>
+	
+	<li {% if type is defined and type == 'company'  %}class="active"{% endif %}>
+		<a href="{{path('add_data' , {'type':'company'})}}">添加企业</a>
+	</li>
+	
+	<li {% if type is defined and type == 'opportunity'  %}class="active"{% endif %}>
+		<a href="{{path('add_data' , {'type':'opportunity'})}}">添加销售机会</a>
+	</li>
 </ul>
 </div></div>
 </div>
@@ -24,31 +35,31 @@
 <div class="panel panel-default">
   	<div class="panel-body">
 		
-		{% if type is defined  %}
-		<div class="col-md-6">
-
-			<input type="hidden" name="add_user_" value="{{ path('rest_') }}" ng-model="add_user_" />
+		{% if type is defined and type == 'user'  %}
+		<div class="col-md-6" ng-controller="add_user">
 
 			{{ form_start(form , { 'action' : '' , 'method' : 'post' , 'class' : 'form-horizontal'}) }}
 
 			    <div class="form-group">
 			    	<label for="">{{ form_label(form.name) }}</label>
-				    {{ form_widget(form.name, { 'attr' : { 'class' : 'form-control' , 'id' : 'username' , 'placeholder' : '输入名字' } }) }}
+				    {{ form_widget(form.name, { 'attr' : { 'class' : 'form-control' , 'placeholder' : '输入名字' } }) }}
 				</div>
 
-				<div class="form-group" ng-controller="add_user">
+				<div class="form-group">
 				    <label for="">{{ form_label(form.username) }}</label>
-				    {{ form_widget( form.username, { 'attr' : { 'class' : 'form-control' , 'id' : 'username' , 'placeholder' : '输入用户名' , 'ng-keyup' : 'username_exist(e)' , 'ng-model' : 'username' } } ) }}
+				    {{ form_widget( form.username, { 'attr' : { 'class' : 'form-control' , 'placeholder' : '输入用户名' , 'ng-keyup' : 'username_exist(e)' , 'ng-model' : 'username' } } ) }}
+
+
 				</div>
 
 				<div class="form-group">
 				    <label for="">{{ form_label(form.email) }}</label>
-				    {{ form_widget(form.email, { 'attr' : { 'class' : 'form-control' , 'id' : 'username' , 'placeholder' : '输入邮箱' } }) }}
+				    {{ form_widget(form.email, { 'attr' : { 'class' : 'form-control' , 'placeholder' : '输入邮箱' } }) }}
 				</div>
 
 				<div class="form-group">
 				    <label for="">{{ form_label(form.password) }}</label>
-				    {{ form_widget(form.password, { 'attr' : { 'class' : 'form-control' , 'id' : 'username' , 'placeholder' : '输入密码' } }) }}
+				    {{ form_widget(form.password, { 'attr' : { 'class' : 'form-control' , 'placeholder' : '输入密码' } }) }}
 				</div>
 
 			{{ form_end(form) }}
@@ -56,7 +67,13 @@
 
 		<div class="col-md-6">
 
+		 {% raw %} 
+		 	{{data.username}}
 
+		 	{{data.username}}
+
+		 	{{data.username}}
+		 {% endraw %} 
 
 		</div>
 
@@ -71,9 +88,38 @@
 
 
 {% block javascript %}
+<script>
+function add_user( $scope , $http)
+{
+
+
+		
 	
-	<script src="{{ asset( 'bundles/angular_mvc/controllers/AdminBundle/Add/index.js') }}"></script>
-	
+	$scope.username_exist = function ()
+	{
+		data = {
+			'username' : $scope.username , 
+		};
+
+		$http({
+		
+			url : "{{ url('rest_add_user_') }}" ,
+			data : $.param( data) , 
+			method : "POST" ,  
+			headers : {
+				'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+			},
+		}).success(function(data ,status) {
+
+			
+
+			$scope.data = data;
+		
+		});
+
+	}
+}
+</script>
 {% endblock %}
 
 

@@ -27,9 +27,9 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
-        // rest_contact
-        if (0 === strpos($pathinfo, '/rest/contact') && preg_match('#^/rest/contact/(?P<id>[0-9]+)\\.(?P<_format>html|json|xml)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'rest_contact')), array (  '_controller' => 'Lean\\RestBundle\\Controller\\UserController::contactAction',));
+        // rest_add_user_
+        if ($pathinfo === '/rest/add_user') {
+            return array (  '_controller' => 'Lean\\RestBundle\\Controller\\UserController::addAction',  '_route' => 'rest_add_user_',);
         }
 
         // index
