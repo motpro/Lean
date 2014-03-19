@@ -75,6 +75,34 @@
 
 		</div>
 
+		{% elseif type is defined and type == 'contact' %}
+
+		<div class="col-md-6" ng-controller="add_user">
+
+			{{form(form)}}
+
+		</div>
+
+		<div class="col-md-6">
+
+		</div>
+
+		{% elseif type is defined and type == 'company' %}
+
+		<div class="col-md-6" ng-controller="add_user">
+
+			{{form(form)}}
+
+		</div>
+
+		<div class="col-md-6">
+
+		</div>		
+
+		{% elseif type is defined and type == 'opportunity' %}
+
+
+
 		{% endif %}
 
 	</div>

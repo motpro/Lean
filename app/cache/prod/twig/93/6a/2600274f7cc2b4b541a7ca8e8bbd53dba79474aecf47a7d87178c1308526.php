@@ -131,34 +131,32 @@ class __TwigTemplate_936a2600274f7cc2b4b541a7ca8e8bbd53dba79474aecf47a7d87178c13
             // line 50
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "username"), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "输入用户名", "ng-keyup" => "username_exist(e)", "ng-model" => "username")));
             echo "
-
-
 \t\t\t\t</div>
 
 \t\t\t\t<div class=\"form-group\">
 \t\t\t\t    <label for=\"\">";
-            // line 56
+            // line 54
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email"), 'label');
             echo "</label>
 \t\t\t\t    ";
-            // line 57
+            // line 55
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email"), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "输入邮箱")));
             echo "
 \t\t\t\t</div>
 
 \t\t\t\t<div class=\"form-group\">
 \t\t\t\t    <label for=\"\">";
-            // line 61
+            // line 59
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "password"), 'label');
             echo "</label>
 \t\t\t\t    ";
-            // line 62
+            // line 60
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "password"), 'widget', array("attr" => array("class" => "form-control", "placeholder" => "输入密码")));
             echo "
 \t\t\t\t</div>
 
 \t\t\t";
-            // line 65
+            // line 63
             echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
             echo "
 \t\t</div>
@@ -166,7 +164,7 @@ class __TwigTemplate_936a2600274f7cc2b4b541a7ca8e8bbd53dba79474aecf47a7d87178c13
 \t\t<div class=\"col-md-6\">
 
 \t\t ";
-            // line 76
+            // line 74
             echo " 
 \t\t \t{{data.username}}
 
@@ -179,8 +177,48 @@ class __TwigTemplate_936a2600274f7cc2b4b541a7ca8e8bbd53dba79474aecf47a7d87178c13
 \t\t</div>
 
 \t\t";
+        } elseif ((array_key_exists("type", $context) && ((isset($context["type"]) ? $context["type"] : $this->getContext($context, "type")) == "contact"))) {
+            // line 79
+            echo "
+\t\t<div class=\"col-md-6\" ng-controller=\"add_user\">
+
+\t\t\t";
+            // line 82
+            echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
+            echo "
+
+\t\t</div>
+
+\t\t<div class=\"col-md-6\">
+
+\t\t</div>
+
+\t\t";
+        } elseif ((array_key_exists("type", $context) && ((isset($context["type"]) ? $context["type"] : $this->getContext($context, "type")) == "company"))) {
+            // line 91
+            echo "
+\t\t<div class=\"col-md-6\" ng-controller=\"add_user\">
+
+\t\t\t";
+            // line 94
+            echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
+            echo "
+
+\t\t</div>
+
+\t\t<div class=\"col-md-6\">
+
+\t\t</div>\t\t
+
+\t\t";
+        } elseif ((array_key_exists("type", $context) && ((isset($context["type"]) ? $context["type"] : $this->getContext($context, "type")) == "opportunity"))) {
+            // line 103
+            echo "
+
+
+\t\t";
         }
-        // line 81
+        // line 107
         echo "
 \t</div>
 </div>
@@ -190,10 +228,10 @@ class __TwigTemplate_936a2600274f7cc2b4b541a7ca8e8bbd53dba79474aecf47a7d87178c13
 ";
     }
 
-    // line 90
+    // line 116
     public function block_javascript($context, array $blocks = array())
     {
-        // line 91
+        // line 117
         echo "<script>
 function add_user( \$scope , \$http)
 {
@@ -210,7 +248,7 @@ function add_user( \$scope , \$http)
 \t\t\$http({
 \t\t
 \t\t\turl : \"";
-        // line 106
+        // line 132
         echo $this->env->getExtension('routing')->getUrl("rest_add_user_");
         echo "\" ,
 \t\t\tdata : \$.param( data) , 
@@ -219,8 +257,6 @@ function add_user( \$scope , \$http)
 \t\t\t\t'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
 \t\t\t},
 \t\t}).success(function(data ,status) {
-
-\t\t\t
 
 \t\t\t\$scope.data = data;
 \t\t
@@ -244,6 +280,6 @@ function add_user( \$scope , \$http)
 
     public function getDebugInfo()
     {
-        return array (  214 => 106,  197 => 91,  194 => 90,  184 => 81,  170 => 76,  162 => 65,  156 => 62,  152 => 61,  145 => 57,  141 => 56,  132 => 50,  128 => 49,  121 => 45,  117 => 44,  111 => 41,  107 => 39,  105 => 38,  91 => 27,  85 => 26,  79 => 23,  73 => 22,  67 => 19,  61 => 18,  55 => 15,  49 => 14,  39 => 6,  36 => 5,  30 => 3,);
+        return array (  252 => 132,  235 => 117,  232 => 116,  222 => 107,  216 => 103,  204 => 94,  199 => 91,  187 => 82,  182 => 79,  168 => 74,  160 => 63,  154 => 60,  150 => 59,  143 => 55,  139 => 54,  132 => 50,  128 => 49,  121 => 45,  117 => 44,  111 => 41,  107 => 39,  105 => 38,  91 => 27,  85 => 26,  79 => 23,  73 => 22,  67 => 19,  61 => 18,  55 => 15,  49 => 14,  39 => 6,  36 => 5,  30 => 3,);
     }
 }

@@ -5,7 +5,12 @@ namespace Lean\AdminBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Lean\AdminBundle\Entity\User;
+use Lean\AdminBundle\Entity\Contact;
+use Lean\AdminBundle\Entity\Corporation;
+
 use Lean\AdminBundle\Form\Type\UserType;
+use Lean\AdminBundle\Form\Type\ContactType;
+use Lean\AdminBundle\Form\Type\CorporationType;
 
 class AddController extends Controller
 {
@@ -16,7 +21,7 @@ class AddController extends Controller
 			return $this->render('LeanAdminBundle:add:index.html.twig');
 
 
-		if( $type === 'user')
+		if( 'user' === $type )
 		{
 
 			$user = new User();
@@ -27,7 +32,25 @@ class AddController extends Controller
 						'form' => $form->createView() 
 					 ) 
 			);
+		}else if( 'contact' === $type )
+		{
+			$contact = new Contact();
+
+			$form = $this->createForm( new ContactType() , $contact);
+			return $this->render('LeanAdminBundle:add:index.html.twig' , 
+				array(  'type' => $type , 
+						'form' => $form->createView() 
+					 ) 
+			);
+		}else if( 'company' === $type )
+		{
+			$corporation = new Corporation();
+			$form = $this->createForm( new CorporationType() , $corporation);
+			return $this->render('LeanAdminBundle:add:index.html.twig' , 
+				array(  'type' => $type , 
+						'form' => $form->createView() 
+					 ) 
+			);
 		}
     }
-
 }
