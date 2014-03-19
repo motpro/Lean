@@ -1,6 +1,6 @@
 <?php
 
-/* @WebProfiler/Collector/config.html.twig */
+/* WebProfilerBundle:Collector:config.html.twig */
 class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad27624 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -40,18 +40,18 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
             <span>
                 ";
         // line 9
-        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "applicationname")) {
+        if ($this->getAttribute($this->getContext($context, "collector"), "applicationname")) {
             // line 10
             echo "                    ";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "applicationname"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "applicationname"), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "applicationversion"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "applicationversion"), "html", null, true);
             echo "
                 ";
         } else {
             // line 12
             echo "                    ";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "symfonyversion"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "symfonyversion"), "html", null, true);
             echo "
                 ";
         }
@@ -65,14 +65,14 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
         ob_start();
         // line 18
         echo "        ";
-        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "applicationname")) {
+        if ($this->getAttribute($this->getContext($context, "collector"), "applicationname")) {
             // line 19
             echo "            <div class=\"sf-toolbar-info-piece\">
                 ";
             // line 20
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "applicationname"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "applicationname"), "html", null, true);
             echo " <b>";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "applicationversion"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "applicationversion"), "html", null, true);
             echo "</b>
             </div>
         ";
@@ -81,13 +81,13 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
         echo "        <div class=\"sf-toolbar-info-piece\">
             Symfony <b>";
         // line 24
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "symfonyversion"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "symfonyversion"), "html", null, true);
         echo "</b>
         </div>
         <div class=\"sf-toolbar-info-piece\">
             <a href=\"http://symfony.com/doc/";
         // line 27
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "symfonyversion"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "symfonyversion"), "html", null, true);
         echo "/index.html\" rel=\"help\">Symfony Documentation</a>
         </div>
     ";
@@ -120,25 +120,25 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
                 <b>PHP</b>
                 <span>";
         // line 42
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "phpversion"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "phpversion"), "html", null, true);
         echo "</span>
             </div>
             <div class=\"sf-toolbar-info-piece sf-toolbar-info-php-ext\">
                 <b>PHP Extensions</b>
                 <span class=\"sf-toolbar-status sf-toolbar-status-";
         // line 46
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "hasxdebug")) ? ("green") : ("red"));
+        echo (($this->getAttribute($this->getContext($context, "collector"), "hasxdebug")) ? ("green") : ("red"));
         echo "\">xdebug</span>
                 <span class=\"sf-toolbar-status sf-toolbar-status-";
         // line 47
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "hasaccelerator")) ? ("green") : ("red"));
+        echo (($this->getAttribute($this->getContext($context, "collector"), "hasaccelerator")) ? ("green") : ("red"));
         echo "\">accel</span>
             </div>
             <div class=\"sf-toolbar-info-piece\">
                 <b>PHP SAPI</b>
                 <span>";
         // line 51
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "sapiName"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "sapiName"), "html", null, true);
         echo "</span>
             </div>
         ";
@@ -156,7 +156,7 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
         echo "    ";
         ob_start();
         echo "sf-toolbar-status sf-toolbar-status-";
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "debug")) ? ("green") : ("red"));
+        echo (($this->getAttribute($this->getContext($context, "collector"), "debug")) ? ("green") : ("red"));
         $context["debug_status_class"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
         // line 59
         echo "    ";
@@ -165,24 +165,24 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
         echo "        <img width=\"21\" height=\"28\" alt=\"Environment\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAcCAMAAAC5xgRsAAAAZlBMVEX///////////////////////////////////////////////////////////////////////////////////////////+ZmZmZmZlISEhJSUmdnZ1HR0fR0dFZWVlpaWlfX18/Pz+puygPAAAAIXRSTlMACwwlJygpLzIzNjs8QEtMUmd6e32AucDBw8fIydTm6u5l8MjvAAAAo0lEQVR42r2P2Q6CMBBFL6XsZRGRfZv//0nbDBNEE19MnJeTc5ILKf58ahiUwzy/AJpIWwREwQnEXRdbGCLjrO+djWRvVMiJcigxB7viGogxDdJpSmHEmCVPS7YczJvgUu+CS30IvtbNYZMvsGVo2mVpG/kbm4auiCpdcC3YPCAhSpAdUzaAn6qPKZtUT6ZSzb4bi2hdo9MQ1nX4ASjfV+/4/Z40pyCHrNTbIgAAAABJRU5ErkJggg==\" />
         <span class=\"sf-toolbar-info-piece-additional-detail ";
         // line 61
-        echo twig_escape_filter($this->env, (isset($context["debug_status_class"]) ? $context["debug_status_class"] : null), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getContext($context, "debug_status_class"), "html", null, true);
         echo "\"> </span>
         <span class=\"sf-toolbar-info-piece-additional sf-toolbar-status\">";
         // line 62
-        echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : null), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getContext($context, "token"), "html", null, true);
         echo "</span>
         ";
         // line 63
-        if ((("n/a" != $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "appname")) || ("n/a" != $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "env")))) {
+        if ((("n/a" != $this->getAttribute($this->getContext($context, "collector"), "appname")) || ("n/a" != $this->getAttribute($this->getContext($context, "collector"), "env")))) {
             // line 64
             echo "            <span class=\"sf-toolbar-info-piece-additional-detail\">
                 <span class=\"sf-toolbar-info-with-delimiter\">";
             // line 65
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "appname"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "appname"), "html", null, true);
             echo "</span>
                 <span>";
             // line 66
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "env"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "env"), "html", null, true);
             echo "</span>
             </span>
         ";
@@ -198,41 +198,41 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
         ob_start();
         // line 72
         echo "            ";
-        if (("n/a" != $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "appname"))) {
+        if (("n/a" != $this->getAttribute($this->getContext($context, "collector"), "appname"))) {
             // line 73
             echo "                <div class=\"sf-toolbar-info-piece\">
                     <b>Name</b>
                     <span>";
             // line 75
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "appname"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "appname"), "html", null, true);
             echo "</span>
                 </div>
             ";
         }
         // line 78
         echo "            ";
-        if (("n/a" != $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "env"))) {
+        if (("n/a" != $this->getAttribute($this->getContext($context, "collector"), "env"))) {
             // line 79
             echo "                <div class=\"sf-toolbar-info-piece\">
                     <b>Environment</b>
                     <span>";
             // line 81
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "env"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "env"), "html", null, true);
             echo "</span>
                 </div>
             ";
         }
         // line 84
         echo "            ";
-        if (("n/a" != $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "debug"))) {
+        if (("n/a" != $this->getAttribute($this->getContext($context, "collector"), "debug"))) {
             // line 85
             echo "                <div class=\"sf-toolbar-info-piece\">
                     <b>Debug</b>
                     <span class=\"";
             // line 87
-            echo twig_escape_filter($this->env, (isset($context["debug_status_class"]) ? $context["debug_status_class"] : null), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getContext($context, "debug_status_class"), "html", null, true);
             echo "\">";
-            echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "debug")) ? ("en") : ("dis"));
+            echo (($this->getAttribute($this->getContext($context, "collector"), "debug")) ? ("en") : ("dis"));
             echo "abled</span>
                 </div>
             ";
@@ -243,18 +243,18 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
                 <span>
                     ";
         // line 93
-        if ((isset($context["profiler_url"]) ? $context["profiler_url"] : null)) {
+        if ($this->getContext($context, "profiler_url")) {
             // line 94
             echo "                        <a href=\"";
-            echo twig_escape_filter($this->env, (isset($context["profiler_url"]) ? $context["profiler_url"] : null), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getContext($context, "profiler_url"), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "token"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "token"), "html", null, true);
             echo "</a>
                     ";
         } else {
             // line 96
             echo "                        ";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "token"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "token"), "html", null, true);
             echo "
                     ";
         }
@@ -268,7 +268,7 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
         $context["text"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
         // line 102
         echo "    ";
-        $this->env->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig")->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : null))));
+        $this->env->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig")->display(array_merge($context, array("link" => $this->getContext($context, "profiler_url"))));
     }
 
     // line 105
@@ -295,16 +295,16 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
         <tr>
             ";
         // line 120
-        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "applicationname")) {
+        if ($this->getAttribute($this->getContext($context, "collector"), "applicationname")) {
             // line 121
             echo "                <th>Application</th>
                 <td>";
             // line 122
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "applicationname"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "applicationname"), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "applicationversion"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "applicationversion"), "html", null, true);
             echo " (on Symfony ";
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "symfonyversion"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "symfonyversion"), "html", null, true);
             echo ")</td>
             ";
         } else {
@@ -312,7 +312,7 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
             echo "                <th>Symfony version</th>
                 <td>";
             // line 125
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "symfonyversion"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "symfonyversion"), "html", null, true);
             echo "</td>
             ";
         }
@@ -320,39 +320,39 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
         echo "        </tr>
         ";
         // line 128
-        if (("n/a" != $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "appname"))) {
+        if (("n/a" != $this->getAttribute($this->getContext($context, "collector"), "appname"))) {
             // line 129
             echo "            <tr>
                 <th>Application name</th>
                 <td>";
             // line 131
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "appname"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "appname"), "html", null, true);
             echo "</td>
             </tr>
         ";
         }
         // line 134
         echo "        ";
-        if (("n/a" != $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "env"))) {
+        if (("n/a" != $this->getAttribute($this->getContext($context, "collector"), "env"))) {
             // line 135
             echo "            <tr>
                 <th>Environment</th>
                 <td>";
             // line 137
-            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "env"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "env"), "html", null, true);
             echo "</td>
             </tr>
         ";
         }
         // line 140
         echo "        ";
-        if (("n/a" != $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "debug"))) {
+        if (("n/a" != $this->getAttribute($this->getContext($context, "collector"), "debug"))) {
             // line 141
             echo "            <tr>
                 <th>Debug</th>
                 <td>";
             // line 143
-            echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "debug")) ? ("enabled") : ("disabled"));
+            echo (($this->getAttribute($this->getContext($context, "collector"), "debug")) ? ("enabled") : ("disabled"));
             echo "</td>
             </tr>
         ";
@@ -370,49 +370,49 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
             <th>PHP version</th>
             <td>";
         // line 156
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "phpversion"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "phpversion"), "html", null, true);
         echo "</td>
         </tr>
         <tr>
             <th>Xdebug</th>
             <td>";
         // line 160
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "hasxdebug")) ? ("enabled") : ("disabled"));
+        echo (($this->getAttribute($this->getContext($context, "collector"), "hasxdebug")) ? ("enabled") : ("disabled"));
         echo "</td>
         </tr>
         <tr>
             <th>PHP acceleration</th>
             <td>";
         // line 164
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "hasaccelerator")) ? ("enabled") : ("disabled"));
+        echo (($this->getAttribute($this->getContext($context, "collector"), "hasaccelerator")) ? ("enabled") : ("disabled"));
         echo "</td>
         </tr>
         <tr>
             <th>XCache</th>
             <td>";
         // line 168
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "hasxcache")) ? ("enabled") : ("disabled"));
+        echo (($this->getAttribute($this->getContext($context, "collector"), "hasxcache")) ? ("enabled") : ("disabled"));
         echo "</td>
         </tr>
         <tr>
             <th>APC</th>
             <td>";
         // line 172
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "hasapc")) ? ("enabled") : ("disabled"));
+        echo (($this->getAttribute($this->getContext($context, "collector"), "hasapc")) ? ("enabled") : ("disabled"));
         echo "</td>
         </tr>
         <tr>
             <th>Zend OPcache</th>
             <td>";
         // line 176
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "haszendopcache")) ? ("enabled") : ("disabled"));
+        echo (($this->getAttribute($this->getContext($context, "collector"), "haszendopcache")) ? ("enabled") : ("disabled"));
         echo "</td>
         </tr>
         <tr>
             <th>EAccelerator</th>
             <td>";
         // line 180
-        echo (($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "haseaccelerator")) ? ("enabled") : ("disabled"));
+        echo (($this->getAttribute($this->getContext($context, "collector"), "haseaccelerator")) ? ("enabled") : ("disabled"));
         echo "</td>
         </tr>
         <tr>
@@ -426,7 +426,7 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
 
     ";
         // line 188
-        if ($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "bundles")) {
+        if ($this->getAttribute($this->getContext($context, "collector"), "bundles")) {
             // line 189
             echo "        <h2>Active bundles</h2>
         <table>
@@ -436,21 +436,21 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
             </tr>
             ";
             // line 195
-            $context["bundles"] = $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "bundles");
+            $context["bundles"] = $this->getAttribute($this->getContext($context, "collector"), "bundles");
             // line 196
             echo "            ";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable(twig_sort_filter(twig_get_array_keys_filter((isset($context["bundles"]) ? $context["bundles"] : null))));
+            $context['_seq'] = twig_ensure_traversable(twig_sort_filter(twig_get_array_keys_filter($this->getContext($context, "bundles"))));
             foreach ($context['_seq'] as $context["_key"] => $context["name"]) {
                 // line 197
                 echo "            <tr>
                 <th>";
                 // line 198
-                echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : null), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getContext($context, "name"), "html", null, true);
                 echo "</th>
                 <td>";
                 // line 199
-                echo twig_escape_filter($this->env, $this->getAttribute((isset($context["bundles"]) ? $context["bundles"] : null), (isset($context["name"]) ? $context["name"] : null), array(), "array"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "bundles"), $this->getContext($context, "name"), array(), "array"), "html", null, true);
                 echo "</td>
             </tr>
             ";
@@ -466,7 +466,7 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
 
     public function getTemplateName()
     {
-        return "@WebProfiler/Collector/config.html.twig";
+        return "WebProfilerBundle:Collector:config.html.twig";
     }
 
     public function isTraitable()
@@ -476,6 +476,6 @@ class __TwigTemplate_598dbf382197d3c0f739890e971733b6109464a78bdf70e7b1444a214ad
 
     public function getDebugInfo()
     {
-        return array (  462 => 202,  453 => 199,  449 => 198,  446 => 197,  441 => 196,  439 => 195,  431 => 189,  429 => 188,  422 => 184,  415 => 180,  408 => 176,  401 => 172,  394 => 168,  387 => 164,  380 => 160,  373 => 156,  361 => 146,  355 => 143,  351 => 141,  348 => 140,  342 => 137,  338 => 135,  335 => 134,  329 => 131,  325 => 129,  323 => 128,  320 => 127,  315 => 125,  312 => 124,  303 => 122,  300 => 121,  298 => 120,  289 => 113,  286 => 112,  278 => 106,  275 => 105,  270 => 102,  267 => 101,  262 => 98,  256 => 96,  248 => 94,  246 => 93,  241 => 90,  233 => 87,  229 => 85,  226 => 84,  220 => 81,  216 => 79,  213 => 78,  207 => 75,  203 => 73,  200 => 72,  197 => 71,  194 => 70,  191 => 69,  185 => 66,  181 => 65,  178 => 64,  176 => 63,  172 => 62,  168 => 61,  165 => 60,  162 => 59,  156 => 58,  153 => 56,  150 => 55,  147 => 54,  141 => 51,  134 => 47,  130 => 46,  123 => 42,  119 => 40,  116 => 39,  113 => 38,  105 => 34,  102 => 33,  99 => 31,  96 => 30,  90 => 27,  84 => 24,  81 => 23,  73 => 20,  70 => 19,  67 => 18,  64 => 17,  59 => 14,  53 => 12,  45 => 10,  43 => 9,  38 => 6,  35 => 5,  33 => 4,  30 => 3,);
+        return array (  462 => 202,  449 => 198,  446 => 197,  441 => 196,  439 => 195,  431 => 189,  429 => 188,  422 => 184,  415 => 180,  408 => 176,  401 => 172,  394 => 168,  380 => 160,  373 => 156,  361 => 146,  351 => 141,  348 => 140,  342 => 137,  338 => 135,  335 => 134,  329 => 131,  325 => 129,  323 => 128,  320 => 127,  315 => 125,  303 => 122,  300 => 121,  289 => 113,  286 => 112,  275 => 105,  267 => 101,  262 => 98,  256 => 96,  248 => 94,  233 => 87,  226 => 84,  216 => 79,  213 => 78,  207 => 75,  200 => 72,  194 => 70,  191 => 69,  185 => 66,  181 => 65,  178 => 64,  172 => 62,  134 => 47,  113 => 38,  84 => 24,  287 => 164,  284 => 163,  270 => 102,  197 => 71,  190 => 110,  170 => 96,  165 => 60,  110 => 51,  65 => 19,  53 => 12,  212 => 104,  195 => 89,  192 => 88,  160 => 63,  150 => 55,  23 => 4,  104 => 22,  77 => 22,  34 => 5,  129 => 60,  118 => 58,  70 => 19,  58 => 14,  153 => 56,  126 => 40,  90 => 27,  81 => 23,  480 => 162,  474 => 161,  469 => 158,  461 => 155,  457 => 153,  453 => 199,  444 => 149,  440 => 148,  437 => 147,  435 => 146,  430 => 144,  427 => 143,  423 => 142,  413 => 134,  409 => 132,  407 => 131,  402 => 130,  398 => 129,  393 => 126,  387 => 164,  384 => 121,  381 => 120,  379 => 119,  374 => 116,  368 => 112,  365 => 111,  362 => 110,  360 => 109,  355 => 143,  341 => 105,  337 => 103,  322 => 101,  314 => 99,  312 => 124,  309 => 97,  305 => 95,  298 => 120,  294 => 90,  285 => 89,  283 => 88,  278 => 106,  268 => 85,  264 => 84,  258 => 81,  252 => 80,  247 => 78,  241 => 90,  229 => 85,  220 => 81,  214 => 69,  177 => 65,  169 => 60,  140 => 55,  132 => 50,  128 => 49,  107 => 39,  61 => 18,  273 => 96,  269 => 94,  254 => 136,  243 => 88,  240 => 86,  238 => 85,  235 => 74,  230 => 126,  227 => 81,  224 => 71,  221 => 77,  219 => 122,  217 => 75,  208 => 118,  204 => 72,  179 => 69,  159 => 46,  143 => 55,  135 => 43,  119 => 40,  102 => 33,  71 => 28,  67 => 18,  63 => 15,  59 => 14,  38 => 6,  94 => 23,  89 => 6,  85 => 26,  75 => 18,  68 => 14,  56 => 16,  87 => 25,  21 => 2,  26 => 12,  93 => 28,  88 => 6,  78 => 21,  46 => 11,  27 => 5,  44 => 8,  31 => 4,  28 => 3,  201 => 92,  196 => 90,  183 => 106,  171 => 61,  166 => 71,  163 => 92,  158 => 67,  156 => 58,  151 => 63,  142 => 59,  138 => 54,  136 => 56,  121 => 45,  117 => 55,  105 => 34,  91 => 27,  62 => 15,  49 => 12,  24 => 7,  25 => 3,  19 => 1,  79 => 23,  72 => 22,  69 => 17,  47 => 9,  40 => 8,  37 => 8,  22 => 3,  246 => 93,  157 => 56,  145 => 46,  139 => 54,  131 => 52,  123 => 42,  120 => 40,  115 => 43,  111 => 41,  108 => 36,  101 => 32,  98 => 47,  96 => 30,  83 => 20,  74 => 21,  66 => 15,  55 => 15,  52 => 13,  50 => 10,  43 => 9,  41 => 6,  35 => 5,  32 => 4,  29 => 3,  209 => 82,  203 => 73,  199 => 67,  193 => 73,  189 => 71,  187 => 84,  182 => 79,  176 => 63,  173 => 65,  168 => 61,  164 => 59,  162 => 59,  154 => 60,  149 => 48,  147 => 54,  144 => 45,  141 => 51,  133 => 55,  130 => 46,  125 => 44,  122 => 43,  116 => 39,  112 => 30,  109 => 29,  106 => 36,  103 => 26,  99 => 31,  95 => 28,  92 => 45,  86 => 42,  82 => 22,  80 => 19,  73 => 20,  64 => 17,  60 => 17,  57 => 11,  54 => 10,  51 => 13,  48 => 14,  45 => 10,  42 => 8,  39 => 6,  36 => 6,  33 => 4,  30 => 3,);
     }
 }

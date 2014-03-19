@@ -1,6 +1,6 @@
 <?php
 
-/* @WebProfiler/Collector/time.html.twig */
+/* WebProfilerBundle:Collector:time.html.twig */
 class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c9af81 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -25,7 +25,7 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 3
-        $context["__internal_be5f0e1288f56d0939857d86ec7931537bdbfa06fb54d097e3c57723f4a78388"] = $this;
+        $context["__internal_d232b628d16ef5bfe76e1f7f026ec227155a6de71b92ab5b987a75b75de7e950"] = $this;
         // line 5
         if ((!array_key_exists("colors", $context))) {
             // line 6
@@ -39,7 +39,7 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
     {
         // line 19
         echo "    ";
-        $context["duration"] = ((twig_length_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "events"))) ? (sprintf("%.0f ms", $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "duration"))) : ("n/a"));
+        $context["duration"] = ((twig_length_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "events"))) ? (sprintf("%.0f ms", $this->getAttribute($this->getContext($context, "collector"), "duration"))) : ("n/a"));
         // line 20
         echo "    ";
         ob_start();
@@ -47,7 +47,7 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
         echo "        <img width=\"16\" height=\"28\" alt=\"Time\" src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAcCAYAAABoMT8aAAABqUlEQVR42t2Vv0sCYRyHX9OmEhsMx/YKGlwLQ69DTEUSBJEQEy5J3FRc/BsuiFqEIIcQIRo6ysUhoaBBWhoaGoJwiMJLglRKrs8bXgienmkQdPDAwX2f57j3fhFJkkbiPwTK5bIiFoul3kmPud8MqKMewDXpwuGww+12n9hsNhFnlijYf/Z4PDmO45Yxo+10ZFGTyWRMEItU6AdCx7lczkgd6n7J2Wx2xm63P6jJMk6n80YQBBN1aUDv9XqvlAbbm2LE7/cLODRB0un0VveAeoDC8/waCQQC18MGQqHQOcEKvw8bcLlcL6TfYnVtCrGRAlartUUYhmn1jKg/E3USjUYfhw3E4/F7ks/nz4YNFIvFQ/ogbUYikdefyqlU6gnuOg2YK5XKvs/n+xhUDgaDTVEUt+HO04ABOBA5isViDTU5kUi81Wq1AzhWMEkDGmAEq2C3UCjcYXGauDvfEsuyUjKZbJRKpVvM8IABU9SVX+cxYABmwIE9cFqtVi9xtgvsC2AHbIAFoKey0gdlHEyDObAEWLACFsEsMALdIJ80+dK0bTS95v7+v/AJnis0eO906QwAAAAASUVORK5CYII=\" />
         <span>";
         // line 22
-        echo twig_escape_filter($this->env, (isset($context["duration"]) ? $context["duration"] : null), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getContext($context, "duration"), "html", null, true);
         echo "</span>
     ";
         $context["icon"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
@@ -59,14 +59,14 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
             <b>Total time</b>
             <span>";
         // line 27
-        echo twig_escape_filter($this->env, (isset($context["duration"]) ? $context["duration"] : null), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getContext($context, "duration"), "html", null, true);
         echo "</span>
         </div>
     ";
         $context["text"] = ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());
         // line 30
         echo "    ";
-        $this->env->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig")->display(array_merge($context, array("link" => (isset($context["profiler_url"]) ? $context["profiler_url"] : null))));
+        $this->env->loadTemplate("@WebProfiler/Profiler/toolbar_item.html.twig")->display(array_merge($context, array("link" => $this->getContext($context, "profiler_url"))));
     }
 
     // line 33
@@ -87,7 +87,7 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
         echo "    <h2>Timeline</h2>
     ";
         // line 42
-        if (twig_length_filter($this->env, $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "events"))) {
+        if (twig_length_filter($this->env, $this->getAttribute($this->getContext($context, "collector"), "events"))) {
             // line 43
             echo "        ";
             $this->displayBlock("panelContent", $context, $blocks);
@@ -113,14 +113,14 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
                 <th style=\"width: 20%\">Total time</th>
                 <td>";
         // line 57
-        echo twig_escape_filter($this->env, sprintf("%.0f", $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "duration")), "html", null, true);
+        echo twig_escape_filter($this->env, sprintf("%.0f", $this->getAttribute($this->getContext($context, "collector"), "duration")), "html", null, true);
         echo " ms</td>
             </tr>
             <tr>
                 <th>Initialization time</th>
                 <td>";
         // line 61
-        echo twig_escape_filter($this->env, sprintf("%.0f", $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "inittime")), "html", null, true);
+        echo twig_escape_filter($this->env, sprintf("%.0f", $this->getAttribute($this->getContext($context, "collector"), "inittime")), "html", null, true);
         echo " ms</td>
             </tr>
             <tr>
@@ -133,19 +133,19 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
     <h3>
         ";
         // line 71
-        echo (($this->getAttribute((isset($context["profile"]) ? $context["profile"] : null), "parent")) ? ("Request") : ("Main Request"));
+        echo (($this->getAttribute($this->getContext($context, "profile"), "parent")) ? ("Request") : ("Main Request"));
         echo "
         <small>
             - ";
         // line 73
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "events"), "__section__"), "duration"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "collector"), "events"), "__section__"), "duration"), "html", null, true);
         echo " ms
             ";
         // line 74
-        if ($this->getAttribute((isset($context["profile"]) ? $context["profile"] : null), "parent")) {
+        if ($this->getAttribute($this->getContext($context, "profile"), "parent")) {
             // line 75
             echo "                - <a href=\"";
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_profiler", array("token" => $this->getAttribute($this->getAttribute((isset($context["profile"]) ? $context["profile"] : null), "parent"), "token"), "panel" => "time")), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_profiler", array("token" => $this->getAttribute($this->getAttribute($this->getContext($context, "profile"), "parent"), "token"), "panel" => "time")), "html", null, true);
             echo "\">parent</a>
             ";
         }
@@ -155,37 +155,37 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
 
     ";
         // line 80
-        echo $context["__internal_be5f0e1288f56d0939857d86ec7931537bdbfa06fb54d097e3c57723f4a78388"]->getdisplay_timeline(("timeline_" . (isset($context["token"]) ? $context["token"] : null)), $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "events"), (isset($context["colors"]) ? $context["colors"] : null));
+        echo $context["__internal_d232b628d16ef5bfe76e1f7f026ec227155a6de71b92ab5b987a75b75de7e950"]->getdisplay_timeline(("timeline_" . $this->getContext($context, "token")), $this->getAttribute($this->getContext($context, "collector"), "events"), $this->getContext($context, "colors"));
         echo "
 
     ";
         // line 82
-        if (twig_length_filter($this->env, $this->getAttribute((isset($context["profile"]) ? $context["profile"] : null), "children"))) {
+        if (twig_length_filter($this->env, $this->getAttribute($this->getContext($context, "profile"), "children"))) {
             // line 83
             echo "        ";
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["profile"]) ? $context["profile"] : null), "children"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "profile"), "children"));
             foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
                 // line 84
                 echo "            ";
-                $context["events"] = $this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : null), "getcollector", array(0 => "time"), "method"), "events");
+                $context["events"] = $this->getAttribute($this->getAttribute($this->getContext($context, "child"), "getcollector", array(0 => "time"), "method"), "events");
                 // line 85
                 echo "            <h3>
                 Sub-request \"<a href=\"";
                 // line 86
-                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_profiler", array("token" => $this->getAttribute((isset($context["child"]) ? $context["child"] : null), "token"), "panel" => "time")), "html", null, true);
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("_profiler", array("token" => $this->getAttribute($this->getContext($context, "child"), "token"), "panel" => "time")), "html", null, true);
                 echo "\">";
-                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : null), "getcollector", array(0 => "request"), "method"), "requestattributes"), "get", array(0 => "_controller"), "method"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "child"), "getcollector", array(0 => "request"), "method"), "requestattributes"), "get", array(0 => "_controller"), "method"), "html", null, true);
                 echo "</a>\"
                 <small> - ";
                 // line 87
-                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["events"]) ? $context["events"] : null), "__section__"), "duration"), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "events"), "__section__"), "duration"), "html", null, true);
                 echo " ms</small>
             </h3>
 
             ";
                 // line 90
-                echo $context["__internal_be5f0e1288f56d0939857d86ec7931537bdbfa06fb54d097e3c57723f4a78388"]->getdisplay_timeline(("timeline_" . $this->getAttribute((isset($context["child"]) ? $context["child"] : null), "token")), (isset($context["events"]) ? $context["events"] : null), (isset($context["colors"]) ? $context["colors"] : null));
+                echo $context["__internal_d232b628d16ef5bfe76e1f7f026ec227155a6de71b92ab5b987a75b75de7e950"]->getdisplay_timeline(("timeline_" . $this->getAttribute($this->getContext($context, "child"), "token")), $this->getContext($context, "events"), $this->getContext($context, "colors"));
                 echo "
         ";
             }
@@ -243,7 +243,7 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
 
             var _drawingColors  = ";
         // line 136
-        echo twig_jsonencode_filter((isset($context["colors"]) ? $context["colors"] : null));
+        echo twig_jsonencode_filter($this->getContext($context, "colors"));
         echo ",
                 _storagePrefix  = 'timeline/',
                 _threshold      = 1,
@@ -514,23 +514,23 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
         var requests_data = {
             \"max\": ";
         // line 404
-        echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "events"), "__section__"), "endtime")), "js", null, true);
+        echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "collector"), "events"), "__section__"), "endtime")), "js", null, true);
         echo ",
             \"requests\": [
 ";
         // line 406
-        echo $context["__internal_be5f0e1288f56d0939857d86ec7931537bdbfa06fb54d097e3c57723f4a78388"]->getdump_request_data((isset($context["token"]) ? $context["token"] : null), (isset($context["profile"]) ? $context["profile"] : null), $this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "events"), $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "events"), "__section__"), "origin"));
+        echo $context["__internal_d232b628d16ef5bfe76e1f7f026ec227155a6de71b92ab5b987a75b75de7e950"]->getdump_request_data($this->getContext($context, "token"), $this->getContext($context, "profile"), $this->getAttribute($this->getContext($context, "collector"), "events"), $this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "collector"), "events"), "__section__"), "origin"));
         echo "
 
 ";
         // line 408
-        if (twig_length_filter($this->env, $this->getAttribute((isset($context["profile"]) ? $context["profile"] : null), "children"))) {
+        if (twig_length_filter($this->env, $this->getAttribute($this->getContext($context, "profile"), "children"))) {
             // line 409
             echo "                ,
 ";
             // line 410
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["profile"]) ? $context["profile"] : null), "children"));
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "profile"), "children"));
             $context['loop'] = array(
               'parent' => $context['_parent'],
               'index0' => 0,
@@ -546,8 +546,8 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
             }
             foreach ($context['_seq'] as $context["_key"] => $context["child"]) {
                 // line 411
-                echo $context["__internal_be5f0e1288f56d0939857d86ec7931537bdbfa06fb54d097e3c57723f4a78388"]->getdump_request_data($this->getAttribute((isset($context["child"]) ? $context["child"] : null), "token"), (isset($context["child"]) ? $context["child"] : null), $this->getAttribute($this->getAttribute((isset($context["child"]) ? $context["child"] : null), "getcollector", array(0 => "time"), "method"), "events"), $this->getAttribute($this->getAttribute($this->getAttribute((isset($context["collector"]) ? $context["collector"] : null), "events"), "__section__"), "origin"));
-                echo (($this->getAttribute((isset($context["loop"]) ? $context["loop"] : null), "last")) ? ("") : (","));
+                echo $context["__internal_d232b628d16ef5bfe76e1f7f026ec227155a6de71b92ab5b987a75b75de7e950"]->getdump_request_data($this->getAttribute($this->getContext($context, "child"), "token"), $this->getContext($context, "child"), $this->getAttribute($this->getAttribute($this->getContext($context, "child"), "getcollector", array(0 => "time"), "method"), "events"), $this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "collector"), "events"), "__section__"), "origin"));
+                echo (($this->getAttribute($this->getContext($context, "loop"), "last")) ? ("") : (","));
                 echo "
 ";
                 ++$context['loop']['index0'];
@@ -617,21 +617,21 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
         ob_start();
         try {
             // line 451
-            $context["__internal_c713cfbaf92811f6f26d62f765c267ed8799e8ca2012819e1ec250c777edd4a5"] = $this;
+            $context["__internal_24bd000ac582740b16f1b04de1aa3edccb828cda161b700a0d978a86c135ce66"] = $this;
             // line 452
             echo "                {
                     \"id\": \"";
             // line 453
-            echo twig_escape_filter($this->env, (isset($context["token"]) ? $context["token"] : null), "js", null, true);
+            echo twig_escape_filter($this->env, $this->getContext($context, "token"), "js", null, true);
             echo "\",
                     \"left\": ";
             // line 454
-            echo twig_escape_filter($this->env, sprintf("%F", ($this->getAttribute($this->getAttribute((isset($context["events"]) ? $context["events"] : null), "__section__"), "origin") - (isset($context["origin"]) ? $context["origin"] : null))), "js", null, true);
+            echo twig_escape_filter($this->env, sprintf("%F", ($this->getAttribute($this->getAttribute($this->getContext($context, "events"), "__section__"), "origin") - $this->getContext($context, "origin"))), "js", null, true);
             echo ",
                     \"events\": [
 ";
             // line 456
-            echo $context["__internal_c713cfbaf92811f6f26d62f765c267ed8799e8ca2012819e1ec250c777edd4a5"]->getdump_events((isset($context["events"]) ? $context["events"] : null));
+            echo $context["__internal_24bd000ac582740b16f1b04de1aa3edccb828cda161b700a0d978a86c135ce66"]->getdump_events($this->getContext($context, "events"));
             echo "
                     ]
                 }
@@ -658,7 +658,7 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
         try {
             // line 464
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["events"]) ? $context["events"] : null));
+            $context['_seq'] = twig_ensure_traversable($this->getContext($context, "events"));
             $context['loop'] = array(
               'parent' => $context['_parent'],
               'index0' => 0,
@@ -674,41 +674,41 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
             }
             foreach ($context['_seq'] as $context["name"] => $context["event"]) {
                 // line 465
-                if (("__section__" != (isset($context["name"]) ? $context["name"] : null))) {
+                if (("__section__" != $this->getContext($context, "name"))) {
                     // line 466
                     echo "                        {
                             \"name\": \"";
                     // line 467
-                    echo twig_escape_filter($this->env, (isset($context["name"]) ? $context["name"] : null), "js", null, true);
+                    echo twig_escape_filter($this->env, $this->getContext($context, "name"), "js", null, true);
                     echo "\",
                             \"category\": \"";
                     // line 468
-                    echo twig_escape_filter($this->env, $this->getAttribute((isset($context["event"]) ? $context["event"] : null), "category"), "js", null, true);
+                    echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "event"), "category"), "js", null, true);
                     echo "\",
                             \"origin\": ";
                     // line 469
-                    echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute((isset($context["event"]) ? $context["event"] : null), "origin")), "js", null, true);
+                    echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute($this->getContext($context, "event"), "origin")), "js", null, true);
                     echo ",
                             \"starttime\": ";
                     // line 470
-                    echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute((isset($context["event"]) ? $context["event"] : null), "starttime")), "js", null, true);
+                    echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute($this->getContext($context, "event"), "starttime")), "js", null, true);
                     echo ",
                             \"endtime\": ";
                     // line 471
-                    echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute((isset($context["event"]) ? $context["event"] : null), "endtime")), "js", null, true);
+                    echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute($this->getContext($context, "event"), "endtime")), "js", null, true);
                     echo ",
                             \"duration\": ";
                     // line 472
-                    echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute((isset($context["event"]) ? $context["event"] : null), "duration")), "js", null, true);
+                    echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute($this->getContext($context, "event"), "duration")), "js", null, true);
                     echo ",
                             \"memory\": ";
                     // line 473
-                    echo twig_escape_filter($this->env, sprintf("%.1F", (($this->getAttribute((isset($context["event"]) ? $context["event"] : null), "memory") / 1024) / 1024)), "js", null, true);
+                    echo twig_escape_filter($this->env, sprintf("%.1F", (($this->getAttribute($this->getContext($context, "event"), "memory") / 1024) / 1024)), "js", null, true);
                     echo ",
                             \"periods\": [";
                     // line 475
                     $context['_parent'] = (array) $context;
-                    $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["event"]) ? $context["event"] : null), "periods"));
+                    $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "event"), "periods"));
                     $context['loop'] = array(
                       'parent' => $context['_parent'],
                       'index0' => 0,
@@ -725,11 +725,11 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
                     foreach ($context['_seq'] as $context["_key"] => $context["period"]) {
                         // line 476
                         echo "{\"start\": ";
-                        echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute((isset($context["period"]) ? $context["period"] : null), "starttime")), "js", null, true);
+                        echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute($this->getContext($context, "period"), "starttime")), "js", null, true);
                         echo ", \"end\": ";
-                        echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute((isset($context["period"]) ? $context["period"] : null), "endtime")), "js", null, true);
+                        echo twig_escape_filter($this->env, sprintf("%F", $this->getAttribute($this->getContext($context, "period"), "endtime")), "js", null, true);
                         echo "}";
-                        echo (($this->getAttribute((isset($context["loop"]) ? $context["loop"] : null), "last")) ? ("") : (", "));
+                        echo (($this->getAttribute($this->getContext($context, "loop"), "last")) ? ("") : (", "));
                         ++$context['loop']['index0'];
                         ++$context['loop']['index'];
                         $context['loop']['first'] = false;
@@ -746,7 +746,7 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
                     echo "]
                         }";
                     // line 479
-                    echo (($this->getAttribute((isset($context["loop"]) ? $context["loop"] : null), "last")) ? ("") : (","));
+                    echo (($this->getAttribute($this->getContext($context, "loop"), "last")) ? ("") : (","));
                     echo "
 ";
                 }
@@ -790,13 +790,13 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
             ";
             // line 488
             $context['_parent'] = (array) $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["colors"]) ? $context["colors"] : null));
+            $context['_seq'] = twig_ensure_traversable($this->getContext($context, "colors"));
             foreach ($context['_seq'] as $context["category"] => $context["color"]) {
                 // line 489
                 echo "                <span data-color=\"";
-                echo twig_escape_filter($this->env, (isset($context["color"]) ? $context["color"] : null), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getContext($context, "color"), "html", null, true);
                 echo "\">";
-                echo twig_escape_filter($this->env, (isset($context["category"]) ? $context["category"] : null), "html", null, true);
+                echo twig_escape_filter($this->env, $this->getContext($context, "category"), "html", null, true);
                 echo "</span>
             ";
             }
@@ -807,7 +807,7 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
             echo "        </div>
         <canvas width=\"680\" height=\"\" id=\"";
             // line 492
-            echo twig_escape_filter($this->env, (isset($context["id"]) ? $context["id"] : null), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getContext($context, "id"), "html", null, true);
             echo "\" class=\"timeline\"></canvas>
     </div>
 ";
@@ -822,7 +822,7 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
 
     public function getTemplateName()
     {
-        return "@WebProfiler/Collector/time.html.twig";
+        return "WebProfilerBundle:Collector:time.html.twig";
     }
 
     public function isTraitable()
@@ -832,6 +832,6 @@ class __TwigTemplate_85aaf1574a4b296e35b2b148209364899ef9e9cf0ccd2aaa1bf60055d3c
 
     public function getDebugInfo()
     {
-        return array (  810 => 492,  807 => 491,  796 => 489,  792 => 488,  788 => 486,  775 => 485,  749 => 479,  746 => 478,  727 => 476,  710 => 475,  706 => 473,  702 => 472,  698 => 471,  694 => 470,  690 => 469,  686 => 468,  682 => 467,  679 => 466,  677 => 465,  660 => 464,  649 => 462,  634 => 456,  629 => 454,  625 => 453,  622 => 452,  620 => 451,  606 => 449,  601 => 446,  567 => 414,  549 => 411,  532 => 410,  529 => 409,  527 => 408,  522 => 406,  517 => 404,  199 => 93,  196 => 92,  188 => 90,  182 => 87,  173 => 85,  68 => 30,  62 => 27,  28 => 3,  357 => 123,  344 => 119,  341 => 118,  332 => 116,  327 => 114,  324 => 113,  318 => 111,  306 => 107,  297 => 104,  291 => 102,  263 => 95,  258 => 94,  243 => 92,  231 => 83,  224 => 81,  212 => 78,  202 => 94,  190 => 76,  187 => 75,  174 => 65,  143 => 51,  136 => 71,  122 => 41,  117 => 39,  112 => 36,  104 => 32,  85 => 24,  75 => 19,  58 => 25,  44 => 20,  161 => 63,  158 => 80,  154 => 60,  151 => 59,  140 => 58,  125 => 42,  121 => 50,  118 => 49,  100 => 39,  87 => 41,  49 => 11,  46 => 10,  27 => 3,  91 => 33,  88 => 25,  63 => 18,  389 => 160,  386 => 159,  378 => 157,  371 => 156,  367 => 155,  363 => 126,  358 => 151,  353 => 121,  345 => 147,  343 => 146,  340 => 145,  334 => 141,  331 => 140,  328 => 139,  326 => 138,  321 => 112,  309 => 108,  307 => 128,  302 => 125,  296 => 121,  293 => 120,  290 => 119,  288 => 101,  283 => 100,  281 => 114,  276 => 111,  274 => 97,  269 => 107,  265 => 96,  259 => 103,  255 => 93,  253 => 100,  235 => 85,  232 => 88,  227 => 86,  222 => 83,  210 => 77,  208 => 76,  189 => 66,  184 => 63,  175 => 65,  170 => 84,  166 => 54,  163 => 82,  155 => 47,  152 => 46,  144 => 42,  127 => 35,  109 => 52,  94 => 21,  82 => 28,  76 => 34,  61 => 15,  39 => 6,  36 => 5,  79 => 21,  72 => 18,  69 => 17,  54 => 22,  47 => 21,  42 => 7,  40 => 11,  37 => 10,  22 => 1,  164 => 58,  157 => 56,  145 => 74,  139 => 49,  131 => 45,  120 => 31,  115 => 39,  111 => 47,  108 => 37,  106 => 51,  101 => 31,  98 => 45,  92 => 43,  83 => 33,  80 => 32,  74 => 14,  66 => 11,  60 => 6,  55 => 24,  52 => 12,  50 => 22,  41 => 19,  32 => 6,  29 => 6,  462 => 202,  453 => 199,  449 => 198,  446 => 197,  441 => 196,  439 => 195,  431 => 189,  429 => 188,  422 => 184,  415 => 180,  408 => 176,  401 => 172,  394 => 168,  387 => 164,  380 => 158,  373 => 156,  361 => 152,  355 => 150,  351 => 120,  348 => 140,  342 => 137,  338 => 135,  335 => 134,  329 => 131,  325 => 129,  323 => 128,  320 => 127,  315 => 110,  312 => 109,  303 => 106,  300 => 105,  298 => 120,  289 => 113,  286 => 112,  278 => 98,  275 => 105,  270 => 102,  267 => 101,  262 => 98,  256 => 96,  248 => 97,  246 => 136,  241 => 93,  233 => 87,  229 => 87,  226 => 84,  220 => 81,  216 => 79,  213 => 78,  207 => 75,  203 => 73,  200 => 72,  197 => 69,  194 => 68,  191 => 67,  185 => 74,  181 => 65,  178 => 66,  176 => 86,  172 => 64,  168 => 61,  165 => 83,  162 => 57,  156 => 62,  153 => 77,  150 => 55,  147 => 75,  141 => 73,  134 => 54,  130 => 46,  123 => 61,  119 => 40,  116 => 57,  113 => 48,  105 => 25,  102 => 40,  99 => 23,  96 => 37,  90 => 42,  84 => 40,  81 => 23,  73 => 33,  70 => 15,  67 => 24,  64 => 23,  59 => 14,  53 => 12,  45 => 9,  43 => 12,  38 => 18,  35 => 6,  33 => 4,  30 => 5,);
+        return array (  810 => 492,  807 => 491,  796 => 489,  792 => 488,  788 => 486,  775 => 485,  749 => 479,  746 => 478,  727 => 476,  710 => 475,  706 => 473,  702 => 472,  698 => 471,  694 => 470,  690 => 469,  686 => 468,  682 => 467,  679 => 466,  677 => 465,  649 => 462,  634 => 456,  625 => 453,  620 => 451,  601 => 446,  567 => 414,  549 => 411,  532 => 410,  529 => 409,  517 => 404,  389 => 160,  386 => 159,  378 => 157,  371 => 156,  358 => 151,  345 => 147,  343 => 146,  340 => 145,  334 => 141,  331 => 140,  328 => 139,  326 => 138,  307 => 128,  302 => 125,  296 => 121,  293 => 120,  290 => 119,  281 => 114,  276 => 111,  259 => 103,  253 => 100,  232 => 88,  222 => 83,  210 => 77,  155 => 47,  152 => 46,  127 => 35,  363 => 153,  357 => 123,  344 => 119,  332 => 116,  327 => 114,  324 => 113,  321 => 135,  318 => 111,  306 => 107,  291 => 102,  274 => 110,  265 => 105,  263 => 95,  255 => 101,  231 => 83,  202 => 94,  174 => 65,  672 => 345,  668 => 344,  664 => 342,  660 => 464,  651 => 337,  647 => 336,  644 => 335,  640 => 334,  631 => 327,  629 => 454,  626 => 325,  622 => 452,  613 => 320,  609 => 319,  606 => 449,  602 => 317,  593 => 310,  591 => 309,  588 => 308,  585 => 307,  581 => 305,  577 => 303,  569 => 300,  563 => 298,  559 => 296,  557 => 295,  552 => 293,  548 => 292,  545 => 291,  541 => 290,  533 => 284,  531 => 283,  527 => 408,  525 => 280,  522 => 406,  519 => 278,  515 => 276,  509 => 272,  505 => 270,  499 => 268,  497 => 267,  489 => 262,  483 => 258,  479 => 256,  473 => 254,  471 => 253,  465 => 249,  463 => 248,  459 => 246,  454 => 244,  448 => 240,  438 => 236,  436 => 235,  428 => 230,  418 => 224,  412 => 222,  410 => 221,  400 => 214,  397 => 213,  383 => 207,  376 => 205,  367 => 155,  353 => 149,  347 => 191,  317 => 185,  313 => 183,  304 => 181,  297 => 104,  295 => 178,  288 => 118,  205 => 108,  188 => 90,  184 => 63,  175 => 58,  161 => 63,  100 => 39,  76 => 34,  462 => 202,  449 => 198,  446 => 197,  441 => 196,  439 => 195,  431 => 189,  429 => 188,  422 => 226,  415 => 180,  408 => 176,  401 => 172,  394 => 168,  380 => 158,  373 => 156,  361 => 152,  351 => 120,  348 => 140,  342 => 137,  338 => 135,  335 => 134,  329 => 188,  325 => 129,  323 => 128,  320 => 127,  315 => 131,  303 => 106,  300 => 105,  289 => 113,  286 => 112,  275 => 105,  267 => 101,  262 => 98,  256 => 96,  248 => 97,  233 => 87,  226 => 84,  216 => 79,  213 => 78,  207 => 75,  200 => 72,  194 => 68,  191 => 67,  185 => 74,  181 => 65,  178 => 59,  172 => 57,  134 => 39,  113 => 48,  84 => 40,  287 => 164,  284 => 163,  270 => 102,  197 => 69,  190 => 76,  170 => 84,  165 => 83,  110 => 51,  65 => 19,  53 => 12,  212 => 78,  195 => 89,  192 => 88,  160 => 63,  150 => 55,  23 => 4,  104 => 32,  77 => 20,  34 => 5,  129 => 60,  118 => 49,  70 => 15,  58 => 25,  153 => 77,  126 => 40,  90 => 42,  81 => 23,  480 => 162,  474 => 161,  469 => 158,  461 => 155,  457 => 245,  453 => 199,  444 => 238,  440 => 148,  437 => 147,  435 => 146,  430 => 144,  427 => 143,  423 => 142,  413 => 134,  409 => 132,  407 => 131,  402 => 215,  398 => 129,  393 => 211,  387 => 164,  384 => 121,  381 => 120,  379 => 119,  374 => 116,  368 => 112,  365 => 197,  362 => 110,  360 => 109,  355 => 150,  341 => 118,  337 => 103,  322 => 101,  314 => 99,  312 => 130,  309 => 129,  305 => 95,  298 => 120,  294 => 90,  285 => 175,  283 => 115,  278 => 98,  268 => 85,  264 => 84,  258 => 94,  252 => 80,  247 => 78,  241 => 93,  229 => 87,  220 => 81,  214 => 69,  177 => 65,  169 => 60,  140 => 58,  132 => 50,  128 => 49,  107 => 39,  61 => 12,  273 => 174,  269 => 107,  254 => 136,  243 => 92,  240 => 86,  238 => 85,  235 => 89,  230 => 126,  227 => 86,  224 => 81,  221 => 77,  219 => 122,  217 => 75,  208 => 76,  204 => 72,  179 => 98,  159 => 90,  143 => 51,  135 => 43,  119 => 40,  102 => 24,  71 => 28,  67 => 14,  63 => 18,  59 => 16,  38 => 18,  94 => 21,  89 => 6,  85 => 24,  75 => 19,  68 => 30,  56 => 16,  87 => 41,  21 => 2,  26 => 12,  93 => 27,  88 => 25,  78 => 21,  46 => 13,  27 => 3,  44 => 20,  31 => 4,  28 => 3,  201 => 106,  196 => 92,  183 => 106,  171 => 61,  166 => 54,  163 => 82,  158 => 80,  156 => 62,  151 => 59,  142 => 59,  138 => 54,  136 => 71,  121 => 50,  117 => 39,  105 => 25,  91 => 33,  62 => 27,  49 => 14,  24 => 7,  25 => 3,  19 => 1,  79 => 18,  72 => 18,  69 => 17,  47 => 21,  40 => 8,  37 => 8,  22 => 3,  246 => 136,  157 => 89,  145 => 74,  139 => 49,  131 => 45,  123 => 61,  120 => 31,  115 => 43,  111 => 47,  108 => 36,  101 => 31,  98 => 45,  96 => 37,  83 => 33,  74 => 21,  66 => 15,  55 => 24,  52 => 12,  50 => 22,  43 => 12,  41 => 19,  35 => 6,  32 => 6,  29 => 3,  209 => 82,  203 => 73,  199 => 93,  193 => 73,  189 => 66,  187 => 75,  182 => 87,  176 => 86,  173 => 85,  168 => 61,  164 => 59,  162 => 59,  154 => 60,  149 => 48,  147 => 75,  144 => 42,  141 => 73,  133 => 55,  130 => 46,  125 => 42,  122 => 41,  116 => 57,  112 => 36,  109 => 52,  106 => 51,  103 => 26,  99 => 23,  95 => 28,  92 => 43,  86 => 42,  82 => 19,  80 => 27,  73 => 33,  64 => 13,  60 => 17,  57 => 11,  54 => 10,  51 => 13,  48 => 14,  45 => 9,  42 => 7,  39 => 6,  36 => 5,  33 => 4,  30 => 5,);
     }
 }

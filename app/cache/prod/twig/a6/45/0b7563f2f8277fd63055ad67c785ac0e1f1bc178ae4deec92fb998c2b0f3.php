@@ -84,7 +84,11 @@ class __TwigTemplate_a6450b7563f2f8277fd63055ad67c785ac0e1f1bc178ae4deec92fb998c
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
-            <ul class=\"nav navbar-nav\">
+            ";
+        // line 35
+        if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+            // line 36
+            echo "            <ul class=\"nav navbar-nav\">
                 <li class=\"dropdown\">
                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">管理员 <b class=\"caret\"></b></a>
                     <ul class=\"dropdown-menu\">
@@ -92,6 +96,10 @@ class __TwigTemplate_a6450b7563f2f8277fd63055ad67c785ac0e1f1bc178ae4deec92fb998c
                         <li><a href=\"#\">联系人列表</a></li>
                         <li><a href=\"#\">网站会员</a></li>
                         <li class=\"divider\"></li>
+                        <li><a href=\"";
+            // line 44
+            echo $this->env->getExtension('routing')->getUrl("adminlist_index");
+            echo "\">管理组</a></li>
                         <li><a href=\"#\">废纸篓</a></li>
                         <li class=\"divider\"></li>
                     </ul>
@@ -101,22 +109,22 @@ class __TwigTemplate_a6450b7563f2f8277fd63055ad67c785ac0e1f1bc178ae4deec92fb998c
                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">销售 <b class=\"caret\"></b></a>
                     <ul class=\"dropdown-menu\">
                         <li><a href=\"";
-        // line 51
-        echo $this->env->getExtension('routing')->getPath("corporation_home", array("page" => 1));
-        echo "\">企业列表</a></li>
+            // line 53
+            echo $this->env->getExtension('routing')->getPath("corporation_home", array("page" => 1));
+            echo "\">企业列表</a></li>
                         <li><a href=\"";
-        // line 52
-        echo $this->env->getExtension('routing')->getPath("contact_home", array("page" => 1));
-        echo "\">客户列表</a></li>
+            // line 54
+            echo $this->env->getExtension('routing')->getPath("contact_home", array("page" => 1));
+            echo "\">客户列表</a></li>
                         <li><a href=\"#\">沟通记录</a></li>
                         <li><a href=\"#\">销售机会</a></li>
                         <li class=\"divider\"></li>
                         <li><a href=\"#\">提醒列表</a></li>
                         <li class=\"divider\"></li>
                         <li><a href=\"";
-        // line 58
-        echo $this->env->getExtension('routing')->getPath("add_home");
-        echo "\">添加数据</a></li>
+            // line 60
+            echo $this->env->getExtension('routing')->getPath("add_home");
+            echo "\">添加数据</a></li>
                         
                     </ul>
                 </li>
@@ -125,13 +133,44 @@ class __TwigTemplate_a6450b7563f2f8277fd63055ad67c785ac0e1f1bc178ae4deec92fb998c
                     <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">工具<b class=\"caret\"></b></a>
                     <ul class=\"dropdown-menu\">
                         <li><a href=\"";
-        // line 66
-        echo $this->env->getExtension('routing')->getPath("search_home");
-        echo "\">搜索</a></li>
+            // line 68
+            echo $this->env->getExtension('routing')->getPath("search_home");
+            echo "\">搜索</a></li>
                     </ul>
                 </li>
             </ul>
-        </div>
+
+            <ul class=\"nav navbar-nav navbar-right\" style=\"margin-right:20px;\">
+              ";
+            // line 74
+            if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+                // line 75
+                echo "              <li class=\"dropdown\">
+                <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">";
+                // line 76
+                echo $this->env->getExtension('actions')->renderUri($this->env->getExtension('http_kernel')->controller("LeanLoginBundle:Default:Index", array("type" => "username")), array());
+                echo "<b class=\"caret\"></b></a>
+                <ul class=\"dropdown-menu\">
+                  <li><a href=\"#\">Action</a></li>
+                  <li><a href=\"#\">Another action</a></li>
+                  <li><a href=\"#\">Something else here</a></li>
+                  <li class=\"divider\"></li>
+                  <li> <a href=\"";
+                // line 82
+                echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("layout.logout", array(), "FOSUserBundle"), "html", null, true);
+                echo "</a></li>
+                </ul>
+              </li>
+              ";
+            }
+            // line 86
+            echo "            </ul>
+        ";
+        }
+        // line 88
+        echo "        </div>
     </nav>
 
 ";
@@ -149,6 +188,6 @@ class __TwigTemplate_a6450b7563f2f8277fd63055ad67c785ac0e1f1bc178ae4deec92fb998c
 
     public function getDebugInfo()
     {
-        return array (  129 => 66,  118 => 58,  109 => 52,  105 => 51,  73 => 21,  70 => 20,  62 => 15,  58 => 14,  51 => 10,  47 => 9,  43 => 8,  37 => 5,  32 => 4,  29 => 3,);
+        return array (  173 => 88,  169 => 86,  160 => 82,  151 => 76,  148 => 75,  146 => 74,  137 => 68,  126 => 60,  117 => 54,  113 => 53,  101 => 44,  91 => 36,  89 => 35,  73 => 21,  70 => 20,  62 => 15,  58 => 14,  51 => 10,  47 => 9,  43 => 8,  37 => 5,  32 => 4,  29 => 3,);
     }
 }

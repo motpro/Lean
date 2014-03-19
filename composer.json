@@ -22,7 +22,7 @@
         "friendsofsymfony/rest-bundle": "1.1.*",
         "jms/serializer-bundle": "0.12.*",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-	"liuggio/excelbundle": "~2.0"
+	    "liuggio/excelbundle": "~2.0"
     },
     "scripts": {
         "post-install-cmd": [

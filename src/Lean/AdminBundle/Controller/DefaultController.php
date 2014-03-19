@@ -8,15 +8,17 @@ class DefaultController extends Controller
 {
     public function indexAction( $page = 1)
     {
+
         $entities = $this->getDoctrine()
                          ->getRepository('LeanAdminBundle:Contact')
-                         ->getContacts( $page );
+                         ->getContacts(  $this->container->get('security.context')->getToken()->getUser()->getId() , $page);
 
         return $this->render('LeanAdminBundle:Default:index.html.twig' , array('users'=>$entities));
     }
 
     public function queryAction( $id)
     {
+        
         $result = $this->getDoctrine()->getRepository('LeanAdminBundle:Contact')->findOneById( $id);
 
         $list = $this->getDoctrine()->getRepository('LeanAdminBundle:Communication')->findByContactId( $id);

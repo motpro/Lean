@@ -1,0 +1,5 @@
+lean_login_homepage:
+    pattern:  /get_current_user/{type}
+    defaults: { _controller: LeanLoginBundle:Default:index }
+    requirements:
+        type: username|email|id

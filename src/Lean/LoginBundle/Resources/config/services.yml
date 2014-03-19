@@ -1,0 +1,7 @@
+parameters:
+#    lean_login.example.class: Lean\LoginBundle\Example
+
+services:
+#    lean_login.example:
+#        class: %lean_login.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

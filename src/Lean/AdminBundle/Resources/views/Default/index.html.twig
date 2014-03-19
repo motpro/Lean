@@ -5,12 +5,44 @@
 {% endblock %}
 
 {% block body %}
+<div ng-controller="search_controller">
+
+<p>{% raw %} {{hello}} {% endraw %}</p>
 
 <table class="table table-bordered table-condensed table-hover">
+    <tr>
+        <td width="5%">id</td>
+        <td width="15%"></td>
+        <td width="15%"></td>
+        <td width="15%"></td>
+        <td width="25%"></td>
+        <td width="25%"></td>
+    </tr>
+    <tr>
+        <td><input class="form-control" type="text" style="width:50px;" ng-keyup="search_id()" ng-model="id" /></td>
+        <td>
+            <input class="form-control" type="text" style="width:150px;" ng-keyup="search('username')" ng-model="value" />
+        </td>
+        <td><input class="form-control" type="text" style="width:150px;" ng-keyup="search('name')" ng-model="name" /></td>
+        <td><input class="form-control" type="text" style="width:150px;" ng-keyup="search('email')" ng-model="email" /></td>
+        <td><input class="form-control" type="text" style="width:150px;" ng-keyup="search('job')" ng-model="job" /></td>
+        <td><input class="form-control" type="text" style="width:150px;" ng-keyup="search('mobile')" ng-model="mobile" /></td>
+    </tr>
+
+    {% raw %} 
+    <tr ng-repeat="p in profile">
+        <td>{{p.id}}</td>
+        <td>{{p.username}}</td>
+        <td><a href="/query/{{p.id}}">{{p.name}}</a></td>
+        <td>{{p.email}}</td>
+        <td>{{p.job}}</td>
+        <td>{{p.mobile}}</td>
+    </tr>
+    {% endraw %}
 
     {% for user in users %}
 
-    <tr {% if user.username %}class="active"{% endif %}>
+    <tr {% if user.username %}class="active"{% endif %} {% raw %}style="{{style}}"{% endraw%}>
         <td>{{user.id}}</td>
         <td><a href="{{ path('contact_query' , { 'id' : user.id }) }}">{{user.username}}</a></td>
         <td>
@@ -24,5 +56,73 @@
     </tr>
     {% endfor %}
 </table>
+</div>
 
+{% endblock %}
+
+
+{% block javascript %}
+<script>
+function search_controller( $scope , $http)
+{
+    $scope.search_id = function()
+    {
+
+        data = {
+            'key'   : 'id' ,
+            'value' : $scope.id ,  
+            'limit' : 50 , 
+            'startFrom': 0,
+        };
+
+        $http({
+        
+            url : "{{ url('rest_search_contact') }}" ,
+            data : $.param( data) , 
+            method : "POST" ,  
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            },
+        }).success(function(data ,status) {
+
+            $scope.profile = data;
+
+            if( $scope.id == '' )
+                $scope.style = "";
+            else
+                $scope.style = "display:none;";
+        
+        });
+    }
+
+    $scope.search = function( $key)
+    {
+        data = {
+            'key'   : $key ,
+            'value' : eval('$scope.'+$key) , 
+            'limit' : 50 , 
+            'startFrom': 0,
+        };
+
+        $http({
+        
+            url : "{{ url('rest_search_contact') }}" ,
+            data : $.param( data) , 
+            method : "POST" ,  
+            headers : {
+                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            },
+        }).success(function(data ,status) {
+
+            $scope.profile = data;
+
+            if( $scope.id == '' )
+                $scope.style = "";
+            else
+                $scope.style = "display:none;";
+        
+        });
+    }
+}
+</script>
 {% endblock %}

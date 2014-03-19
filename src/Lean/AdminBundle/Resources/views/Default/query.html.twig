@@ -7,12 +7,14 @@
 KindEditor.ready(function(K) {
     K.create('#content1', {
         themeType : 'default' , 
-        height: '240px',
+        height: '200px',
         width: '100%' ,
     });
 });
 
-
+$('#datetimepicker').datetimepicker({
+    format: 'yyyy-mm-dd hh:ii'
+});
 </script>
 
 <div class="container">
@@ -21,33 +23,36 @@ KindEditor.ready(function(K) {
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">
-
                  {{contact.name}}的沟通记录
-
             </h3>
         </div>
         <div class="panel-body">
         <table class="table table-condensed">
         <tr>
-            <td class="col-md-4"><span class="label label-default">编号</span></td>
-            <td class="col-md-8"><span class="label label-default">&nbsp;&nbsp;提醒时间 &nbsp;</span> 
-            | <span class="label label-default">&nbsp;添加时间 &nbsp;</label></td>
+            
+            <td class="col-md-10"><span class="label label-default">提醒时间</span> 
+            | <span class="label label-default">&nbsp;添加时间 &nbsp;</label>
+            </td>
+
+            <td class="col-md-2"><span class="label label-default">编号</span></td>
         </tr>
         {% for one in list if one.recordText %}
             <tr>
-                <td>{{one.id}}</td>
                 <td>
                     {% if one.remindeddate %}
                     <span class="label label-info">{{one.remindeddate|date('Y-m-d h:i')}}</span>
                     {% else %}
-                    <span class="label label-info">没有提醒时间</span>
+                    <span class="label label-info">没有提醒</span>
                     {% endif %} |
                 {{one.date|date('Y-m-d h:i')}}
                 </td>
+                <td>{{one.id}}</td>
             </tr>
             <tr>
-                <td></td>
+
                 <td>{{one.recordText}}</td>
+                <td></td>
+                
             </tr>
         {% endfor %}
         </table>
@@ -62,15 +67,15 @@ KindEditor.ready(function(K) {
             <h3 class="panel-title">添加新的沟通记录</h3>
         </div>
         <div class="panel-body">
-            <form action="" method="post">
-            <textarea id="content1" name="content" style="width:700px;height:200px;visibility:hidden;"></textarea>
+            <form name="form" action="" method="post" ng-submit="save()" ng-controller="FormSubmit">
+            <textarea id="content1" name="content" style="width:700px;height:200px;visibility:hidden;" ng-model="text" ></textarea>
             
             <div class="form-group">
                 <label>时间</label>
-                <input class="form-control" type="text" value="" id="datetimepicker">
+                <input class="form-control" type="text" value="" id="datetimepicker" ng-model="date" />
             </div>
             <div class="form-group">
-                <input class="btn btn-primary" type="button" value="更新" />
+                <input class="btn btn-primary" type="submit" value="更新" />
             </div>
             </form>
         </div>
@@ -104,23 +109,23 @@ KindEditor.ready(function(K) {
                 </tr>
                 <tr>
                     <td>真实姓名</td>
-                    <td>{% if webprofile.name is defined %}{{webprofile.name}}{% endif %}</td>
+                    <td>{% if webprofile.name is defined %}{{webprofile.name}}{% else %}未填写{% endif %}</td>
                 </tr>
                 <tr>
                     <td>联系方式</td>
-                    <td>{% if webprofile.phone is defined %}{{webprofile.phone}}{% endif %}</td>
+                    <td>{% if webprofile.phone is defined %}{{webprofile.phone}}{% else %}未填写{% endif %}</td>
                 </tr>   
                 <tr>
                     <td>公司</td>
-                    <td>{% if webprofile.company is defined %}{{webprofile.company}}{% endif %}</td>
+                    <td>{% if webprofile.company is defined %}{{webprofile.company}}{% else %}未填写{% endif %}</td>
                 </tr>
                 <tr>
                     <td>工作</td>
-                    <td>{% if webprofile.job is defined %}{{webprofile.job}}{% endif %}</td>
+                    <td>{% if webprofile.job is defined %}{{webprofile.job}}{% else %}未填写{% endif %}</td>
                 </tr>
                 <tr>
                     <td>城市</td>
-                    <td>{% if webprofile.city is defined %}{{webprofile.city}}{% endif %}</td>
+                    <td>{% if webprofile.city is defined %}{{webprofile.city}}{% else %}未填写{% endif %}</td>
                 </tr>                
             </table>
         </div>
@@ -145,7 +150,6 @@ KindEditor.ready(function(K) {
     <div class="col-md-6">
 
     
-
     </div>
 </div>
 
@@ -156,8 +160,15 @@ KindEditor.ready(function(K) {
 
 {% block javascript %}
 <script>
-$('#datetimepicker').datetimepicker({
-    format: 'yyyy-mm-dd hh:ii'
-});
+var appModule = angular.module('TestFormModule', []);
+
+appModule.controller("FormSubmit",function($scope){
+    $scope.save=function()
+    {
+        alert('done');
+    }
+}
+
+
 </script>
 {% endblock %}

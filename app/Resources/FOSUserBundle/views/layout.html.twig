@@ -1,0 +1,52 @@
+{% extends "::template.html.twig" %}
+
+{% block head %}
+    <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/bootstrap3/dist/css/bootstrap.css') }}" />
+
+    <!-- kindeditor start. -->
+    <link rel="stylesheet" href="{{ asset( 'bundles/kindeditor/themes/default/default.css' ) }}" />
+    <script charset="utf-8" src="{{ asset( 'bundles/kindeditor/kindeditor-min.js') }}"></script>
+    <script charset="utf-8" src="{{ asset( 'bundles/kindeditor/lang/zh_CN.js') }}"></script>
+    <!-- kindeditor end-->
+
+    <!-- datetimepicker start-->
+    <link rel="stylesheet" href="{{ asset( 'bundles/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' ) }}" />
+    <script charset="utf-8" src="{{ asset( 'bundles/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <!-- datetimepicker end-->
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="jumbotron" align="center">
+            <h2>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                
+            {% endif %}
+            </h2>
+        
+
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for key, message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message|trans({}, 'FOSUserBundle') }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        {% if not is_granted("ROLE_USER") %}
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+        {% endif %}
+
+    </div>
+{% endblock %}

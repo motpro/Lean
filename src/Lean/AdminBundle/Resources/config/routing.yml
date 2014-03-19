@@ -38,3 +38,7 @@ add_data:
     defaults: { _controller: LeanAdminBundle:Add:index }
     requirements:
         type: user|contact|company|opportunity
+
+adminlist_index:
+    pattern: /adminlist_index
+    defaults: { _controller: LeanAdminBundle:Adminlist:index }

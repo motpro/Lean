@@ -12,11 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class ContactRepository extends EntityRepository
 {
-	public function getContacts( $page = 1, $offset = 50)
+	public function getContacts( $master_id , $page = 1, $offset = 50)
 	{
       return $this->createQueryBuilder('contact')
 			      ->select('contact.id , contact.name , contact.username , contact.job , contact.email , contact.mobile')
 			      ->orderBy('contact.id' , 'desc')
+			      ->where( 'contact.masterId = ' .  $master_id)
 			      ->setFirstResult( ( $page - 1) * $offset )
 			      ->setMaxResults( $offset )
 			      ->getQuery()

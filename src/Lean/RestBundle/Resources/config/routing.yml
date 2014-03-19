@@ -1,3 +1,11 @@
 rest_add_user_:
     pattern: /rest/add_user
     defaults: { _controller: LeanRestBundle:User:add }
+rest_search_contact:
+    pattern: /search_contact
+    defaults: { _controller: LeanRestBundle:Contact:search }
+    requirements:
+        key: id|username|name|email|job|company|phone|mobile
+        value: .+
+        limit: \d+
+        start: \d+
